@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Register</title>
+    <title>Cadastro de Funcionário | Controle Ponto</title>
 
     <!-- Bootstrap core CSS-->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,24 +25,50 @@
 <body class="bg-dark">
 	<div class="container">
       <div class="card card-register mx-auto mt-5">
-        <div class="card-header">Register an Account</div>
+        <div class="card-header">Registro de Funcionário</div>
         <div class="card-body">
           <form>
             <div class="form-group">
               <div class="form-row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-label-group">
-                    <input type="text" id="firstName" class="form-control" placeholder="First name" required="required" autofocus="autofocus">
-                    <label for="firstName">First name</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-label-group">
-                    <input type="text" id="lastName" class="form-control" placeholder="Last name" required="required">
-                    <label for="lastName">Last name</label>
+                    <input type="text" id="txtFullname" class="form-control" placeholder="Full Name" required="required" autofocus="autofocus">
+                    <label for="txtFullname">Nome completo</label>
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="form-group">
+            	<div class="form-row">
+            		<div class="col-md-12">
+                  		<div class="form-label-group">
+                    		<input type="text" id="txtAddress" class="form-control" placeholder="Endereço" required="required">
+                    		<label for="txtAddress">Endereço</label>
+                  		</div>
+                	</div>
+            	</div>
+            </div>
+            <div class="form-group">
+            	<div class="form-row">
+            		<div class="col-md-4">
+                  		<div class="form-label-group">
+                    		<input type="text" id="txtCep" class="form-control" placeholder="CEP" required="required">
+                    		<label for="txtCep">CEP</label>
+                  		</div>
+                	</div>
+                	<div class="col-md-4">
+                  		<div class="form-label-group">
+                    		<input type="text" id="txtCidade" class="form-control" placeholder="Cidade" required="required">
+                    		<label for="txtCidade">Cidade</label>
+                  		</div>
+                	</div>
+                	<div class="col-md-4">
+                  		<div class="form-label-group">
+                    		<input type="text" id="txtUF" class="form-control" placeholder="UF" required="required">
+                    		<label for="txtUF">UF</label>
+                  		</div>
+                	</div>
+            	</div>
             </div>
             <div class="form-group">
               <div class="form-label-group">
@@ -54,24 +80,27 @@
               <div class="form-row">
                 <div class="col-md-6">
                   <div class="form-label-group">
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
-                    <label for="inputPassword">Password</label>
+                    <input type="text" id="txtTelefoneResid" class="form-control" placeholder="Telefone residencial">
+                    <label for="txtTelefoneResid">Telefone Residencial</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-label-group">
-                    <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password" required="required">
-                    <label for="confirmPassword">Confirm password</label>
+                    <input type="text" id="txtCelular" class="form-control" placeholder="Celular" required="required">
+                    <label for="txtCelular">Celular</label>
                   </div>
                 </div>
               </div>
             </div>
-            <a class="btn btn-primary btn-block" href="login.html">Register</a>
+            <input class="btn btn-primary btn-block" type="submit" value="Registrar funcionário">
           </form>
+          <!--
+          <a class="btn btn-primary btn-block" href="login.html">Register</a>
           <div class="text-center">
             <a class="d-block small mt-3" href="login.html">Login Page</a>
             <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
           </div>
+           -->
         </div>
       </div>
     </div>

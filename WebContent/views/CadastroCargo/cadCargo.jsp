@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Login | Controle Ponto</title>
+    <title>Cadastro de Cargo | Controle de Ponto</title>
 
     <!-- Bootstrap core CSS-->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,46 +20,51 @@
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin.css" rel="stylesheet">
+
 </head>
 <body class="bg-dark">
 	<div class="container">
-      <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Login</div>
+      <div class="card card-register mx-auto mt-5">
+        <div class="card-header">Cadastro de cargo</div>
         <div class="card-body">
           <form>
-            <div class="form-group">
-              <div class="form-label-group">
-                <input type="text" id="inputUser" class="form-control" placeholder="Username" required="required" autofocus="autofocus">
-                <label for="inputUser">Username</label>
-              </div>
+          	<div class="form-group">
+            	<div class="form-row">
+            		<div class="col-md-6">
+            			<div class="form-label-group">
+            				<input type="number" id="idCargo" class="form-control" placeholder="ID Cargo" required="required">
+            				<label for="idCargo">ID Cargo</label>
+            			</div>
+            		</div>
+            		<div class="col-md-6">
+            			<div class="form-label-group">
+            				<input type="text" id="txtCargoFunc" class="form-control" placeholder="Cargo" required="required">
+            				<label for="txtCargoFunc">Cargo</label>
+            			</div>
+            		</div>
+            	</div>
             </div>
             <div class="form-group">
-              <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
-                <label for="inputPassword">Password</label>
-              </div>
+            	<div class="form-row">
+            		<div class="col-md-6">
+            			<div class="form-label-group">
+            				<input type="text" id="txtSalario" class="form-control" placeholder="Salário R$" required="required">
+            				<label for="txtSalario">Salário R$</label>
+            			</div>
+            		</div>
+            	</div>
             </div>
-            <div class="form-group">
-            	<input class="btn btn-primary btn-block" type="submit" value="Login">
-            </div>
+            <input class="btn btn-primary btn-block" type="submit" value="Cadastrar cargo">
             <!--
-            <div class="form-group">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="remember-me">
-                  Remember Password
-                </label>
-              </div>
-            </div>
-            <a class="btn btn-primary btn-block" href="index.html">Login</a>
-            -->
+            <a class="btn btn-primary btn-block" href="login.html">Register</a>
+             -->
           </form>
           <!--
           <div class="text-center">
-            <a class="d-block small mt-3" href="register.html">Register an Account</a>
+            <a class="d-block small mt-3" href="login.html">Login Page</a>
             <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
           </div>
-           -->
+          -->
         </div>
       </div>
     </div>
