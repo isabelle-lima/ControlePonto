@@ -27,34 +27,31 @@
       <div class="card card-register mx-auto mt-5">
         <div class="card-header">Cadastro de cargo</div>
         <div class="card-body">
-          <form>
+          <form action="/Cargo.do" method="post">
           	<div class="form-group">
             	<div class="form-row">
             		<div class="col-md-6">
             			<div class="form-label-group">
-            				<input type="number" id="idCargo" class="form-control" placeholder="ID Cargo" required="required">
-            				<label for="idCargo">ID Cargo</label>
+            				<input type="text" id="txtCargoFunc" name="txtCargoFunc" class="form-control" placeholder="Cargo" required="required">
+            				<label for="txtCargoFunc">Cargo</label>
             			</div>
             		</div>
             		<div class="col-md-6">
             			<div class="form-label-group">
-            				<input type="text" id="txtCargoFunc" class="form-control" placeholder="Cargo" required="required">
-            				<label for="txtCargoFunc">Cargo</label>
+            				<input type="text" id="txtSalario" name="txtSalario" class="form-control" placeholder="Salário R$" required="required">
+            				<label for="txtSalario">Salário R$</label>
             			</div>
             		</div>
             	</div>
             </div>
             <div class="form-group">
             	<div class="form-row">
-            		<div class="col-md-6">
-            			<div class="form-label-group">
-            				<input type="text" id="txtSalario" class="form-control" placeholder="Salário R$" required="required">
-            				<label for="txtSalario">Salário R$</label>
-            			</div>
+            		<div class="col-md-12">
+            			<input class="btn btn-primary btn-block" type="submit" value="Cadastrar cargo">
             		</div>
             	</div>
             </div>
-            <input class="btn btn-primary btn-block" type="submit" value="Cadastrar cargo">
+            
             <!--
             <a class="btn btn-primary btn-block" href="login.html">Register</a>
              -->
