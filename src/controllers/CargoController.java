@@ -2,6 +2,7 @@ package controllers;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -38,15 +39,18 @@ public class CargoController extends HttpServlet {
 		
 		Cargo cargos = new Cargo();
 		cargos.setCargo(nomecargo);
+		cargos.setCargaH(carga);
 		cargos.setSalarioBase(salarioB);
 		
-		//System.out.println(cargos.getCargo());
+		System.out.println(cargos.getCargaH());
 		//System.out.println(cargos.getSalarioBase());
 			
 		CargoDAO cargoDAO = new CargoDAO();
 		cargoDAO.cadastrar(cargos);
 		
-		response.sendRedirect("views/ListarCargos/listarCargo.jsp");
+		//response.sendRedirect("listarcargos.do");
+		RequestDispatcher rd = request.getRequestDispatcher("listarcargos.do");
+        rd.forward(request, response);
 	}
 
 }

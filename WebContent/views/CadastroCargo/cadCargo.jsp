@@ -42,7 +42,7 @@
             	<div class="form-row">
             		<div class="col-md-6">
             			<div class="form-label-group">
-            				<input type="time" id="txtCargaH" name="txtCargaH" class="form-control" placeholder="Carga Horário" required="required">
+            				<input type="time" id="txtCargaH" name="txtCargaH" value="08:00" class="form-control" placeholder="Carga Horário" required="required">
             				<label for="txtCargaH">Carga Horária</label>
             			</div>
             		</div>

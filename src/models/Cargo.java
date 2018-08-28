@@ -1,6 +1,6 @@
 package models;
 
-import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class Cargo {
@@ -32,15 +32,15 @@ public class Cargo {
 	public String getCargaH() {
 		return cargaH;
 	}
-	public void setCargaH(String cargaH) {
-		
-		DateFormat formato = new SimpleDateFormat("HH:MM");
-		try {
-			this.cargaH = formato.parse(cargaH);
-		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
-		}
-		
-	}
 	
+	public void setCargaH(String cargaH) {
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+			java.util.Date d = sdf.parse(cargaH);
+			System.out.println(d.toString());
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}		
+	}
+		
 }
