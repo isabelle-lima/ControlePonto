@@ -36,7 +36,7 @@ public class Cargo {
 		
 		DateFormat formato = new SimpleDateFormat("HH:MM");
 		try {
-			this.cargaH = new java.sql.Time(formato.parse(cargaH));
+			this.cargaH = formato.parse(cargaH);
 		} catch (Exception e) {
 			throw new RuntimeException(e.getMessage());
 		}

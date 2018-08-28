@@ -28,11 +28,13 @@ public class CargoController extends HttpServlet {
 		String nomecargo;
 		String salario;
 		double salarioB;
+		String carga;
 		
 		nomecargo = request.getParameter("txtCargoFunc");
 		salario = request.getParameter("txtSalario");
 		salario.replaceAll(",", ".");
 		salarioB = Double.parseDouble(salario);
+		carga = request.getParameter("txtCargaH");
 		
 		Cargo cargos = new Cargo();
 		cargos.setCargo(nomecargo);
