@@ -12,7 +12,8 @@ public class CargoDAO {
 		
 		Connection con = Conexao.recebeConexao();
 		
-		String sql = "INSERT INTO CARGO (CARGO, SALARIO_BASE) VALUES (?, ?);";
+		String sql = "INSERT INTO CARGO (CARGO, SALARIO_BASE) VALUES (?, ?)";
+		//System.out.println(sql);
 		
 		try {
 			PreparedStatement preparador = con.prepareStatement(sql);
@@ -21,8 +22,10 @@ public class CargoDAO {
 			
 			preparador.execute();
 			preparador.close();
-		} catch (SQLException e) {
+			
 			System.out.println("Cargo cadastrado com sucesso.");
+		} catch (SQLException e) {
+			System.out.println("Erro ao cadastrar cargo.");
 			e.printStackTrace();
 		}
 		

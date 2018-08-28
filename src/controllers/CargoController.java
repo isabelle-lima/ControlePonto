@@ -23,7 +23,7 @@ public class CargoController extends HttpServlet {
 		
 	}
 	*/
-	@Override
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nomecargo;
 		String salario;
@@ -34,14 +34,17 @@ public class CargoController extends HttpServlet {
 		salario.replaceAll(",", ".");
 		salarioB = Double.parseDouble(salario);
 		
-		Cargo cargo = new Cargo();
-		cargo.setCargo(nomecargo);
-		cargo.setSalarioBase(salarioB);
+		Cargo cargos = new Cargo();
+		cargos.setCargo(nomecargo);
+		cargos.setSalarioBase(salarioB);
 		
+		//System.out.println(cargos.getCargo());
+		//System.out.println(cargos.getSalarioBase());
+			
 		CargoDAO cargoDAO = new CargoDAO();
-		cargoDAO.cadastrar(cargo);
+		cargoDAO.cadastrar(cargos);
 		
-		response.sendRedirect("../ListarCragos/listarCargo.jsp");
+		response.sendRedirect("views/ListarCargos/listarCargo.jsp");
 	}
 
 }

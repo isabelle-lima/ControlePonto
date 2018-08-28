@@ -27,13 +27,23 @@
       <div class="card card-register mx-auto mt-5">
         <div class="card-header">Cadastro de cargo</div>
         <div class="card-body">
-          <form action="/Cargo.do" method="post">
+          <form action="../../Cargo.do" method="post">
           	<div class="form-group">
             	<div class="form-row">
-            		<div class="col-md-6">
+            		<div class="col-md-12">
             			<div class="form-label-group">
             				<input type="text" id="txtCargoFunc" name="txtCargoFunc" class="form-control" placeholder="Cargo" required="required">
             				<label for="txtCargoFunc">Cargo</label>
+            			</div>
+            		</div>
+            	</div>
+            </div>
+            <div class="form-group">
+            	<div class="form-row">
+            		<div class="col-md-6">
+            			<div class="form-label-group">
+            				<input type="time" id="txtCargaH" name="txtCargaH" class="form-control" placeholder="Carga Horário" required="required">
+            				<label for="txtCargaH">Carga Horária</label>
             			</div>
             		</div>
             		<div class="col-md-6">
