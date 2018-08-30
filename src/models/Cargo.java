@@ -1,14 +1,13 @@
 package models;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.sql.Time;
 
 public class Cargo {
 
 	private int id;
 	private String cargo;
 	private double salarioBase;
-	private String cargaH;
+	private Time cargaH;
 	
 		public int getId() {
 		return id;
@@ -29,18 +28,12 @@ public class Cargo {
 		this.salarioBase = salarioBase;
 	}
 	
-	public String getCargaH() {
+	public Time getCargaH() {
 		return cargaH;
 	}
 	
-	public void setCargaH(String cargaH) {
-		try {
-			SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-			java.util.Date d = sdf.parse(cargaH);
-			System.out.println(d.toString());
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}		
+	public void setCargaH(Time cargaH) {
+		this.cargaH = cargaH;
 	}
 		
 }

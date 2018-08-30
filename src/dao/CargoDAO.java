@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class CargoDAO<ListaCargos> {
 		try {
 			PreparedStatement preparador = con.prepareStatement(sql);
 			preparador.setString(1, c.getCargo());
-			preparador.setString(2, c.getCargaH());
+			preparador.setTime(2, c.getCargaH());
 			preparador.setDouble(3, c.getSalarioBase());
 						
 			preparador.execute();
@@ -30,6 +31,12 @@ public class CargoDAO<ListaCargos> {
 			System.out.println("Cargo cadastrado com sucesso.");
 		} catch (SQLException e) {
 			System.out.println("Erro ao cadastrar cargo.");
+			e.printStackTrace();
+		}
+		
+		try {
+			con.close();
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
@@ -49,12 +56,9 @@ public class CargoDAO<ListaCargos> {
 			
 			while(resultado.next()) {
 				Cargo c = new Cargo();
+				c.setId(resultado.getInt("ID"));
 				c.setCargo(resultado.getString("CARGO"));
-				if (resultado.getString("CARGA_HORARIA").length() > 0 || resultado.getString("CARGA_HORARIA") != null) {
-					c.setCargaH(resultado.getString("CARGA_HORARIA"));
-				} else {
-					c.setCargaH("00:00");
-				}
+				c.setCargaH(resultado.getTime("CARGA_HORARIA"));
 				c.setSalarioBase(resultado.getDouble("SALARIO_BASE"));
 				lista.add(c);
 			}
@@ -62,6 +66,13 @@ public class CargoDAO<ListaCargos> {
 			System.out.println("Erro ao consultar tabela Cargo no banco.");
 			e.printStackTrace();
 		}
+		
+		try {
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		return lista;
 	}
 	

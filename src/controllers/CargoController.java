@@ -1,6 +1,10 @@
 package controllers;
 
 import java.io.IOException;
+import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -29,17 +33,28 @@ public class CargoController extends HttpServlet {
 		String nomecargo;
 		String salario;
 		double salarioB;
-		String carga;
+		String str;
 		
 		nomecargo = request.getParameter("txtCargoFunc");
 		salario = request.getParameter("txtSalario");
 		salario.replaceAll(",", ".");
 		salarioB = Double.parseDouble(salario);
-		carga = request.getParameter("txtCargaH");
+				
+		str = request.getParameter("txtCargaH");
+		str = str + ":00";
+		SimpleDateFormat formatador = new SimpleDateFormat("HH:mm:ss");
+		Date data = null;
+		try {
+			data = (Date) formatador.parse(str);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		Time time = new Time(data.getTime());
+		System.out.println(time);
 		
 		Cargo cargos = new Cargo();
 		cargos.setCargo(nomecargo);
-		cargos.setCargaH(carga);
+		cargos.setCargaH(time);
 		cargos.setSalarioBase(salarioB);
 		
 		System.out.println(cargos.getCargaH());
@@ -48,7 +63,6 @@ public class CargoController extends HttpServlet {
 		CargoDAO cargoDAO = new CargoDAO();
 		cargoDAO.cadastrar(cargos);
 		
-		//response.sendRedirect("listarcargos.do");
 		RequestDispatcher rd = request.getRequestDispatcher("listarcargos.do");
         rd.forward(request, response);
 	}

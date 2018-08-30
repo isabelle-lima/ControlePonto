@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<jsp:useBean id="dao" class="dao.CargoDAO"/>
 <%@ page import="models.Cargo" %>
 <%@ page import="java.util.List" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -118,25 +120,22 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
+                      <th>ID</th>
                       <th>Cargo</th>
                       <th>Carga Horária</th>
                       <th>Salário R$</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <%
-                    	List<Cargo> listaCargo = (List<Cargo>)request.getAttribute("lista");
-                    	for(Cargo crg:listaCargo) {
-                    %>
-                    <tr>
-                      <td><%= crg.getCargo() %></td>
-                      <td><%= crg.getCargaH() %></td>
-                      <td><%= crg.getSalarioBase() %></td>
-                    </tr>
-                    <%
-                    	}
-                    %>
-                   </tbody>
+                 <tbody>
+                 	<c:forEach var="cargo" items="${listaCargos}">
+ 						<tr>
+  							<td>${cargo.id}</td>
+  							<td>${cargo.cargo}</td>
+  							<td>${cargo.cargaH}</td>
+  							<td>${cargo.salarioBase}</td>
+ 						</tr> 
+ 					</c:forEach>
+                </tbody>
                 </table>
               </div>
             </div>
