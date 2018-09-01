@@ -6,10 +6,10 @@ public class Cargo {
 
 	private int id;
 	private String cargo;
-	private double salarioBase;
-	private Time cargaH;
+	private double salario_base;
+	private Time carga_horaria;
 	
-		public int getId() {
+	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
@@ -21,19 +21,17 @@ public class Cargo {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-	public double getSalarioBase() {
-		return salarioBase;
+	public double getSalario_base() {
+		return salario_base;
 	}
-	public void setSalarioBase(double salarioBase) {
-		this.salarioBase = salarioBase;
+	public void setSalario_base(double salario_base) {
+		this.salario_base = salario_base;
 	}
-	
-	public Time getCargaH() {
-		return cargaH;
+	public Time getCarga_horaria() {
+		return carga_horaria;
 	}
-	
-	public void setCargaH(Time cargaH) {
-		this.cargaH = cargaH;
+	public void setCarga_horaria(Time carga_horaria) {
+		this.carga_horaria = carga_horaria;
 	}
-		
+			
 }

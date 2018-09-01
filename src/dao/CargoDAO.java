@@ -22,8 +22,8 @@ public class CargoDAO<ListaCargos> {
 		try {
 			PreparedStatement preparador = con.prepareStatement(sql);
 			preparador.setString(1, c.getCargo());
-			preparador.setTime(2, c.getCargaH());
-			preparador.setDouble(3, c.getSalarioBase());
+			preparador.setTime(2, c.getCarga_horaria());
+			preparador.setDouble(3, c.getSalario_base());
 						
 			preparador.execute();
 			preparador.close();
@@ -58,8 +58,8 @@ public class CargoDAO<ListaCargos> {
 				Cargo c = new Cargo();
 				c.setId(resultado.getInt("ID"));
 				c.setCargo(resultado.getString("CARGO"));
-				c.setCargaH(resultado.getTime("CARGA_HORARIA"));
-				c.setSalarioBase(resultado.getDouble("SALARIO_BASE"));
+				c.setCarga_horaria(resultado.getTime("CARGA_HORARIA"));
+				c.setSalario_base(resultado.getDouble("SALARIO_BASE"));
 				lista.add(c);
 			}
 		} catch (SQLException e) {

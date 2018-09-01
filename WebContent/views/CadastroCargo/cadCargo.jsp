@@ -27,7 +27,7 @@
       <div class="card card-register mx-auto mt-5">
         <div class="card-header">Cadastro de cargo</div>
         <div class="card-body">
-          <form action="../../Cargo.do" method="post">
+          <form action="../../Cargo.do" method="post" target="listarCargo.jsp">
           	<div class="form-group">
             	<div class="form-row">
             		<div class="col-md-12">

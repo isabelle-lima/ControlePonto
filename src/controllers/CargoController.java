@@ -5,6 +5,7 @@ import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,29 +20,26 @@ import models.Cargo;
 /**
  * Servlet implementation class CargoController
  */
-@WebServlet("/Cargo.do")
+@WebServlet(name="ServletCargos", urlPatterns="/Cargo.do")
 public class CargoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
-	/*   
-   	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+ 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+ 		
+ 		CargoDAO cargoDAO = new CargoDAO();
+		
+		List<Cargo> lista = cargoDAO.buscarTodos();
+		request.getSession().setAttribute("listaCargos", lista);
+		response.sendRedirect("views/ListarCargos/listarCargo.jsp");
 		
 	}
-	*/
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nomecargo;
-		String salario;
-		double salarioB;
-		String str;
 		
-		nomecargo = request.getParameter("txtCargoFunc");
-		salario = request.getParameter("txtSalario");
-		salario.replaceAll(",", ".");
-		salarioB = Double.parseDouble(salario);
-				
-		str = request.getParameter("txtCargaH");
-		str = str + ":00";
+		/* Recebe da View cadCargo.jsp */
+		String cargo = request.getParameter("txtCargoFunc");
+		Double salario_base = Double.parseDouble(request.getParameter("txtSalario").replaceAll(",", "."));
+		String str = request.getParameter("txtCargaH") + "00";
 		SimpleDateFormat formatador = new SimpleDateFormat("HH:mm:ss");
 		Date data = null;
 		try {
@@ -49,22 +47,18 @@ public class CargoController extends HttpServlet {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		Time time = new Time(data.getTime());
-		System.out.println(time);
+		Time carga_horaria = new Time(data.getTime());
 		
+		/* Model */
 		Cargo cargos = new Cargo();
-		cargos.setCargo(nomecargo);
-		cargos.setCargaH(time);
-		cargos.setSalarioBase(salarioB);
+		cargos.setCargo(cargo);
+		cargos.setCarga_horaria(carga_horaria);
+		cargos.setSalario_base(salario_base);
 		
-		System.out.println(cargos.getCargaH());
-		//System.out.println(cargos.getSalarioBase());
-			
+		/* DAO */
 		CargoDAO cargoDAO = new CargoDAO();
 		cargoDAO.cadastrar(cargos);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("listarcargos.do");
-        rd.forward(request, response);
+		doGet(request, response);
 	}
-
 }
