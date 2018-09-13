@@ -7,10 +7,10 @@ public class Funcionarios {
 	private String endereco;
 	private String cep;
 	private String cidade;
-	private int idUF;
-	private int idCargo;
 	private String telefone;
 	private String celular;
+	private int iduf;
+	private int idcargo;
 	
 	public int getId() {
 		return id;
@@ -42,18 +42,6 @@ public class Funcionarios {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
-	public int getIdUF() {
-		return idUF;
-	}
-	public void setIdUF(int idUF) {
-		this.idUF = idUF;
-	}
-	public int getIdCargo() {
-		return idCargo;
-	}
-	public void setIdCargo(int idCargo) {
-		this.idCargo = idCargo;
-	}
 	public String getTelefone() {
 		return telefone;
 	}
@@ -66,5 +54,17 @@ public class Funcionarios {
 	public void setCelular(String celular) {
 		this.celular = celular;
 	}
-	
+	public int getIduf() {
+		return iduf;
+	}
+	public void setIduf(int iduf) {
+		this.iduf = iduf;
+	}
+	public int getIdcargo() {
+		return idcargo;
+	}
+	public void setIdcargo(int idcargo) {
+		this.idcargo = idcargo;
+	}
+		
 }

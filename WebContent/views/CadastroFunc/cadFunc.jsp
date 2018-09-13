@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="dao.UFDAO" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -32,8 +33,8 @@
               <div class="form-row">
                 <div class="col-md-12">
                   <div class="form-label-group">
-                    <input type="text" id="txtFullname" class="form-control" placeholder="Full Name" required="required" autofocus="autofocus">
-                    <label for="txtFullname">Nome completo</label>
+                    <input type="text" name="nome" class="form-control" placeholder="Nome Completo" required="required" autofocus="autofocus">
+                    <label for="nome">Nome completo</label>
                   </div>
                 </div>
               </div>
@@ -42,8 +43,8 @@
             	<div class="form-row">
             		<div class="col-md-12">
                   		<div class="form-label-group">
-                    		<input type="text" id="txtAddress" class="form-control" placeholder="Endereço" required="required">
-                    		<label for="txtAddress">Endereço</label>
+                    		<input type="text" name="endereco" class="form-control" placeholder="Endereço" required="required">
+                    		<label for="endereco">Endereço</label>
                   		</div>
                 	</div>
             	</div>
@@ -52,48 +53,54 @@
             	<div class="form-row">
             		<div class="col-md-4">
                   		<div class="form-label-group">
-                    		<input type="text" id="txtCep" class="form-control" placeholder="CEP" required="required">
-                    		<label for="txtCep">CEP</label>
+                    		<input type="text" name="cep" class="form-control" placeholder="CEP" required="required">
+                    		<label for="cep">CEP</label>
                   		</div>
                 	</div>
                 	<div class="col-md-4">
                   		<div class="form-label-group">
-                    		<input type="text" id="txtCidade" class="form-control" placeholder="Cidade" required="required">
-                    		<label for="txtCidade">Cidade</label>
+                    		<input type="text" name="cidade" class="form-control" placeholder="Cidade" required="required">
+                    		<label for="cidade">Cidade</label>
                   		</div>
                 	</div>
                 	<div class="col-md-4">
                   		<div class="form-label-group">
-                    		<input type="text" id="txtUF" class="form-control" placeholder="UF" required="required">
-                    		<label for="txtUF">UF</label>
+                    		<input type="text" name="iduf" class="form-control" placeholder="UF" required="required">
+                    		<label for="iduf">UF</label>
                   		</div>
                 	</div>
             	</div>
             </div>
             <div class="form-group">
-              <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required">
-                <label for="inputEmail">Email address</label>
-              </div>
-            </div>
-            <div class="form-group">
               <div class="form-row">
                 <div class="col-md-6">
                   <div class="form-label-group">
-                    <input type="text" id="txtTelefoneResid" class="form-control" placeholder="Telefone residencial">
-                    <label for="txtTelefoneResid">Telefone Residencial</label>
+                    <input type="text" name="telefone" class="form-control" placeholder="Telefone residencial">
+                    <label for="telefone">Telefone Residencial</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-label-group">
-                    <input type="text" id="txtCelular" class="form-control" placeholder="Celular" required="required">
-                    <label for="txtCelular">Celular</label>
+                    <input type="text" name="celular" class="form-control" placeholder="Celular" required="required">
+                    <label for="celular">Celular</label>
                   </div>
                 </div>
               </div>
             </div>
+            <div class="form-group">
+            	<div class="form-row">
+            		<div class="col-md-12">
+            			<div class="form-label-group">
+            				<select name="cargo">
+            					
+            				</select>
+            			</div>
+            		</div>
+            	</div>
+            </div>
             <input class="btn btn-primary btn-block" type="submit" value="Registrar funcionário">
           </form>
+          
           <!--
           <a class="btn btn-primary btn-block" href="login.html">Register</a>
           <div class="text-center">

@@ -33,7 +33,6 @@ CREATE TABLE FUNCIONARIOS (
     CELULAR VARCHAR(12),
     IDUF INT,
     IDCARGO INT,
-    IDAPONTAMENTO INT,
     foreign key (IDUF) references UF (ID),
     foreign key (IDCARGO) references CARGO (ID)
 );
