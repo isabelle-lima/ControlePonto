@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="dao.UFDAO" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="models.Cargo" %>
+<%@ page import="models.Funcionarios" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -65,8 +68,11 @@
                 	</div>
                 	<div class="col-md-4">
                   		<div class="form-label-group">
-                    		<input type="text" name="iduf" class="form-control" placeholder="UF" required="required">
-                    		<label for="iduf">UF</label>
+                    		<select name="iduf">
+                    			<c:forEach var="uf" items="${listaEstados}">
+                    				<option>${uf.uf}</option>
+                    			</c:forEach>
+                    		</select>
                   		</div>
                 	</div>
             	</div>
@@ -91,9 +97,11 @@
             	<div class="form-row">
             		<div class="col-md-12">
             			<div class="form-label-group">
-            				<select name="cargo">
-            					
-            				</select>
+            				<select name="idCargo">
+                    			<c:forEach var="cargo" items="${listaCargos}">
+                    				<option>${cargo.cargo}</option>
+                    			</c:forEach>
+                    		</select>
             			</div>
             		</div>
             	</div>

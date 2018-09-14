@@ -21,6 +21,12 @@
 	function RedirectLogin() {
 		location.href="views/Login/login.jsp";
 	}
+	function RedirectCadCargo() {
+		location.href="views/CadastroCargo/cadCargo.jsp";
+	}
+	function RedirectCadFuncionario() {
+		location.href="Funcionario.do";
+	}
 </script>
 	<link rel="icon" href="views/Imagens/icon-clock-2.png">
 	<!-- Bootstrap core CSS-->
@@ -32,6 +38,12 @@
 	<div class="form-group">
 		<div class="form-row">
 			<button type="button" id="center" class="btn-lg btn-default" onClick="RedirectLogin()">Acessar o sistema</button>
+		</div>
+		<div class="form-row">
+			<button type="button" id="center" class="btn-lg btn-default" onClick="RedirectCadCargo()">Cadastrar Cargo</button>
+		</div>
+		<div class="form-row">
+			<button type="button" id="center" class="btn-lg btn-default" onClick="RedirectCadFuncionario()">Cadastrar Funcionário</button>
 		</div>
 	</div>
 	

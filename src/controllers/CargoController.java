@@ -54,6 +54,10 @@ public class CargoController extends HttpServlet {
 		cargos.setCarga_horaria(carga_horaria);
 		cargos.setSalario_base(salario_base);
 		
+		System.out.println(cargos.getCargo());
+		System.out.println(cargos.getCarga_horaria());
+		System.out.println(cargos.getSalario_base());
+		
 		/* DAO */
 		CargoDAO cargoDAO = new CargoDAO();
 		cargoDAO.cadastrar(cargos);
