@@ -12,6 +12,7 @@
 
     <title>Cadastro de Cargo | Controle de Ponto</title>
 
+	<link rel="icon" href="../Imagens/icon-clock-2.png">
     <!-- Bootstrap core CSS-->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 

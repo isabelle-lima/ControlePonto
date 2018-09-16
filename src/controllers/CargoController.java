@@ -38,8 +38,10 @@ public class CargoController extends HttpServlet {
 		/* Recebe da View cadCargo.jsp */
 		String cargo = request.getParameter("txtCargoFunc");
 		Double salario_base = Double.parseDouble(request.getParameter("txtSalario").replaceAll(",", "."));
-		String str = request.getParameter("txtCargaH") + "00";
-		SimpleDateFormat formatador = new SimpleDateFormat("HH:mm:ss");
+		//String str = request.getParameter("txtCargaH") + "00";
+		String str = request.getParameter("txtCargaH");
+		//SimpleDateFormat formatador = new SimpleDateFormat("HH:mm:ss");
+		SimpleDateFormat formatador = new SimpleDateFormat("HH:mm");
 		Date data = null;
 		try {
 			data = (Date) formatador.parse(str);
@@ -54,10 +56,11 @@ public class CargoController extends HttpServlet {
 		cargos.setCarga_horaria(carga_horaria);
 		cargos.setSalario_base(salario_base);
 		
+		/*
 		System.out.println(cargos.getCargo());
 		System.out.println(cargos.getCarga_horaria());
 		System.out.println(cargos.getSalario_base());
-		
+		*/
 		/* DAO */
 		CargoDAO cargoDAO = new CargoDAO();
 		cargoDAO.cadastrar(cargos);

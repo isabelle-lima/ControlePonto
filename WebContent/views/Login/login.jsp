@@ -12,6 +12,7 @@
 
     <title>Login | Controle Ponto</title>
 
+	<link rel="icon" href="views/Imagens/icon-clock-2.png">
     <!-- Bootstrap core CSS-->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 

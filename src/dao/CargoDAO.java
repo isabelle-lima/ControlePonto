@@ -75,4 +75,40 @@ public class CargoDAO<ListaCargos> {
 		return lista;
 	}
 	
+	public int buscaPorDesc(String desc) {
+		Connection con = Conexao.recebeConexao();
+		
+//		String sql = "SELECT * FROM CARGO WHERE CARGO LIKE %?%";
+		String sql = "SELECT * FROM CARGO WHERE CARGO LIKE ?";
+		
+		Cargo c = null;
+		
+		try {
+			PreparedStatement preparador = con.prepareStatement(sql);
+			preparador.setString(1, "%" + desc + "%");
+			
+			ResultSet resultado = preparador.executeQuery();
+			
+			if(resultado.next()) {
+				c = new Cargo();
+				c.setId(resultado.getInt("ID"));
+				c.setCargo(resultado.getString("CARGO"));
+				c.setCarga_horaria(resultado.getTime("CARGA_HORARIA"));
+				c.setSalario_base(resultado.getDouble("SALARIO_BASE"));
+			}
+			
+		} catch (SQLException e) {
+			System.out.println("Erro ao consultar tabela Cargo no banco.");
+			e.printStackTrace();
+		}
+		
+		try {
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return c.getId();
+	}
+	
 }
