@@ -45,9 +45,6 @@ public class FuncionarioController extends HttpServlet {
 		int iduf;
 		int idcargo;
 		
-		System.out.println("UF: "+request.getParameter("iduf")); //aqui no esta vindo o id
-		System.out.println("Cargo: "+request.getParameter("idcargo")); // aqui tambem nao esta vindo o id
-		
 		UFDAO ufDAO = new UFDAO();
 		CargoDAO cargoDAO = new CargoDAO();
 		iduf = ufDAO.buscarPorSigla(uf);
@@ -71,13 +68,10 @@ public class FuncionarioController extends HttpServlet {
 		FuncionariosDAO funcDAO = new FuncionariosDAO();
 		funcDAO.cadastrar(func);
 		
-		//FuncionariosDAO funcDAO = new FuncionariosDAO();
-		
 		List<Funcionarios> listaFunc = funcDAO.buscarTodos();
 		request.getSession().setAttribute("listaFunc", listaFunc);
 		
 		response.sendRedirect("views/ConsultaFunc/consultaFunc.jsp");
-		//doGet(request,response);
 	}
 
 }

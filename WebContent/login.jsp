@@ -10,67 +10,51 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Login | Controle Ponto</title>
+    <title>Login | Controle de Ponto</title>
 
 	<link rel="icon" href="views/Imagens/icon-clock-2.png">
     <!-- Bootstrap core CSS-->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="views/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template-->
-    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="views/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template-->
-    <link href="../css/sb-admin.css" rel="stylesheet">
+    <link href="views/css/sb-admin.css" rel="stylesheet">
 </head>
 <body class="bg-dark">
 	<div class="container">
       <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Login</div>
+      <div align ="center"><img src="views/Imagens/logo.jpeg" width="200px" height="250px"></div>
+        <div class="card-header">Login <strong>| Controle de Ponto</strong></div>
         <div class="card-body">
-          <form>
+          <form action="Login.do" method="post">
             <div class="form-group">
               <div class="form-label-group">
-                <input type="text" id="inputUser" class="form-control" placeholder="Username" required="required" autofocus="autofocus">
+                <input type="text" id="inputUser" name="inputUser" class="form-control" tabindex="0">
                 <label for="inputUser">Username</label>
               </div>
             </div>
             <div class="form-group">
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+                <input type="password" id="inputPassword" name="inputPassword" class="form-control" tabindex="0">
                 <label for="inputPassword">Password</label>
               </div>
             </div>
             <div class="form-group">
             	<input class="btn btn-primary btn-block" type="submit" value="Login">
             </div>
-            <!--
-            <div class="form-group">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="remember-me">
-                  Remember Password
-                </label>
-              </div>
-            </div>
-            <a class="btn btn-primary btn-block" href="index.html">Login</a>
-            -->
-          </form>
-          <!--
-          <div class="text-center">
-            <a class="d-block small mt-3" href="register.html">Register an Account</a>
-            <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
-          </div>
-           -->
+           </form>
         </div>
       </div>
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="views/vendor/jquery/jquery.min.js"></script>
+    <script src="views/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="views/vendor/jquery-easing/jquery.easing.min.js"></script>
 	
 </body>
 </html>

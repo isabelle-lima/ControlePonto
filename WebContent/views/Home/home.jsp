@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<jsp:useBean id="dao" class="dao.CargoDAO"/>
-<%@ page import="models.Cargo" %>
-<%@ page import="java.util.List" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="models.Funcionarios" %>
+<%@ page import="java.util.List" %>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -14,9 +13,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Lista de Cargos | Controle de Ponto</title>
+    <title>Lista de Funcionários | Controle de Ponto</title>
 
-	<link rel="icon" href="../Imagens/icon-clock-2.png">
     <!-- Bootstrap core CSS-->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -28,65 +26,48 @@
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin.css" rel="stylesheet">
+
 </head>
 <body id="page-top">
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-      <a class="navbar-brand mr-1" href="../Home/home.jsp">Controle de Ponto</a>
+      <a class="navbar-brand mr-1" href="home.jsp"><img src="../Imagens/logo.jpeg" width="50px" height="50px"> Controle de Ponto</a>
 
     </nav>
 
-    <div id="wrapper">
-
-      <div id="content-wrapper">
-
-        <div class="container-fluid">
-
-          <!-- DataTables Example -->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fas fa-table"></i>
-              Lista de Cargos</div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Cargo</th>
-                      <th>Carga Horária</th>
-                      <th>Salário R$</th>
-                    </tr>
-                  </thead>
-                 <tbody>
-                 	<c:forEach var="cargo" items="${listaCargos}">
- 						<tr>
-  							<td>${cargo.id}</td>
-  							<td>${cargo.cargo}</td>
-  							<td>${cargo.carga_horaria}</td>
-  							<td>${cargo.salario_base}</td>
- 						</tr> 
- 					</c:forEach>
-                </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /.container-fluid -->
-
-      </div>
-      <!-- /.content-wrapper -->
-
-    </div> 
+	<div class="form-group">
+		<div class="form-row"></div>
+		<div class="form-row"></div>
+	</div>
+    <table border="0" align="center">
+    	<tr height="50">
+    		<td width="300"><a href="../CadastroCargo/cadCargo.jsp">Cadastrar cargo</a></td>
+    		<td><a href="../../Cargo.do">Consultar cargos (carga horária e salário base)</a></td>
+    	</tr>
+    	<tr height="50">
+    		<td width="300"><a href="../../Funcionario.do">Cadastrar funcionário</a></td>
+    		<td><a href="../../ConsultaFuncionarios.do">Consultar funcionários</a></td>
+    	</tr>
+    	<tr height="50">
+    		<td width="300"><a href="../CadastroUsuario/cadUser.jsp">Cadastrar login</a></td>
+    		<td><a href="">Gerar relatório semanal</a></td>
+    	</tr>
+    	<tr height="50">
+    		<td width="300"><a href="">Lançamento de horas</a></td>
+    		<td><a href="">Gerar relatório mensal</a></td>
+    	</tr>
+    	<tr height="50">
+    		<td><a href="">Visualizar banco de horas</a></td>
+    		<td><a href="">Logoff</a></td>
+    	</tr>
+    </table>
     
     <footer>
       <div align="center">
           Copyright © ILW Tech 2018
       </div>
     </footer>
-    <!-- /#wrapper -->
-    
+
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fas fa-angle-up"></i>

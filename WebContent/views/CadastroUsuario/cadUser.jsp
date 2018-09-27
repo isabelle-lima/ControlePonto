@@ -10,8 +10,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Cadastro de usuário | Controle de Ponto</title>
+    <title>Cadastro de Login | Controle de Ponto</title>
 
+	<link rel="icon" href="../Imagens/icon-clock-2.png">
     <!-- Bootstrap core CSS-->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -25,52 +26,43 @@
 <body class="bg-dark">
 	<div class="container">
       <div class="card card-register mx-auto mt-5">
-        <div class="card-header">Cadastro de usuário</div>
+        <div class="card-header">Cadastro de Login</div>
         <div class="card-body">
-          <form>
+          <form action="../../CadastroLogin.do" method="post">
           	<div class="form-group">
             	<div class="form-row">
-            		<div class="col-md-6">
+            		<div class="col-md-12">
             			<div class="form-label-group">
-            				<input type="text" id="txtFunc" class="form-control" placeholder="Funcionario" required="required">
-            				<label for="txtFunc">Nome do Funcionário</label>
+            				<input type="text" id="txtUsuario" name="txtUsuario" class="form-control" tabindex="0">
+            				<label for="txtUsuario">Usuário</label>
             			</div>
             		</div>
-            		<div class="col-md-6">
-            			<div class="form-label-group">
-            				<input type="text" id="txtCargoFunc" class="form-control" placeholder="Cargo" required="required">
-            				<label for="txtCargoFunc">Cargo</label>
-            			</div>
-            		</div>
-            	</div>
-            </div>
-            <div class="form-group">
-              <div class="form-row">
-                <div class="col-md-6">
-                  <div class="form-label-group">
-                    <input type="text" id="txtUser" class="form-control" placeholder="Username" required="required" autofocus="autofocus">
-                    <label for="txtUser">Username</label>
-                  </div>
-                </div>
             	</div>
             </div>
             <div class="form-group">
             	<div class="form-row">
             		<div class="col-md-6">
-                  <div class="form-label-group">
-                    <input type="password" id="txtPwd" class="form-control" placeholder="Password" required="required">
-                    <label for="txtPwd">Password</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-label-group">
-                    <input type="password" id="txtCPwd" class="form-control" placeholder="Confirm password" required="required">
-                    <label for="txtCPwd">Confirm password</label>
-                  </div>
-                </div>
+            			<div class="form-label-group">
+            				<input type="password" id="txtSenha" name="txtSenha" class="form-control" tabindex="0">
+            				<label for="txtSenha">Senha</label>
+            			</div>
+            		</div>
+            		<div class="col-md-6">
+            			<div class="form-label-group">
+            				<input type="password" id="txtConfirmaSenha" name="txtConfirmaSenha" class="form-control" tabindex="0">
+            				<label for="txtConfirmaSenha">Confirmar senha</label>
+            			</div>
+            		</div>
             	</div>
             </div>
-            <input class="btn btn-primary btn-block" type="submit" value="Cadastrar usuário">
+            <div class="form-group">
+            	<div class="form-row">
+            		<div class="col-md-12">
+            			<input class="btn btn-primary btn-block" type="submit" value="Cadastrar Usuário">
+            		</div>
+            	</div>
+            </div>
+            
             <!--
             <a class="btn btn-primary btn-block" href="login.html">Register</a>
              -->

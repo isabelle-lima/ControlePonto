@@ -4,8 +4,8 @@ public class Login {
 
 	private int id;
 	private String username;
-	private String password;
-	private int idFunc;
+	private String pwd;
+	private int tp_perfil;
 	
 	public int getId() {
 		return id;
@@ -19,17 +19,17 @@ public class Login {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getPassword() {
-		return password;
+	public String getPwd() {
+		return pwd;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
 	}
-	public int getIdFunc() {
-		return idFunc;
+	public int getTp_perfil() {
+		return tp_perfil;
 	}
-	public void setIdFunc(int idFunc) {
-		this.idFunc = idFunc;
+	public void setTp_perfil(int tp_perfil) {
+		this.tp_perfil = tp_perfil;
 	}
 		
 }
