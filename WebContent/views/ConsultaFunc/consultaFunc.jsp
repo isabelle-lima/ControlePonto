@@ -15,6 +15,12 @@
 
     <title>Lista de Funcionários | Controle de Ponto</title>
 
+	<%
+     if (session.getAttribute("login") == null){
+       response.sendRedirect("../../login.jsp");
+     }
+ 	%>
+
 	<link rel="icon" href="../Imagens/icon-clock-2.png">
     <!-- Bootstrap core CSS-->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

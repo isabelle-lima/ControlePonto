@@ -32,7 +32,7 @@ public class CadastroLoginController extends HttpServlet {
 			LoginDAO lg = new LoginDAO();
 			lg.cadastrar(l);
 			
-			response.sendRedirect("views/Home/home.jsp");
+			response.sendRedirect("login.jsp");
 		} else {
 			response.getWriter().append("Senhas não conferem. Tente novamente.");
 			response.sendRedirect("views/CadastroUsuario/cadUser.jsp");

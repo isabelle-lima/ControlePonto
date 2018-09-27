@@ -15,6 +15,12 @@
     <meta name="author" content="">
 
     <title>Lista de Cargos | Controle de Ponto</title>
+    
+	<%
+     if (session.getAttribute("login") == null){
+       response.sendRedirect("../../login.jsp");
+     }
+ 	%>
 
 	<link rel="icon" href="../Imagens/icon-clock-2.png">
     <!-- Bootstrap core CSS-->

@@ -14,6 +14,11 @@
     <meta name="author" content="">
 
     <title>Lista de Funcionários | Controle de Ponto</title>
+    <%
+     if (session.getAttribute("login") == null){
+       response.sendRedirect("../../login.jsp");
+     }
+ 	%>
 
     <!-- Bootstrap core CSS-->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -49,16 +54,15 @@
     		<td><a href="../../ConsultaFuncionarios.do">Consultar funcionários</a></td>
     	</tr>
     	<tr height="50">
-    		<td width="300"><a href="../CadastroUsuario/cadUser.jsp">Cadastrar login</a></td>
+    		<td width="300"><a href="">Lançamento de horas</a></td>
     		<td><a href="">Gerar relatório semanal</a></td>
     	</tr>
     	<tr height="50">
-    		<td width="300"><a href="">Lançamento de horas</a></td>
+    		<td width="300"><a href="">Visualizar banco de horas</a></td>
     		<td><a href="">Gerar relatório mensal</a></td>
     	</tr>
     	<tr height="50">
-    		<td><a href="">Visualizar banco de horas</a></td>
-    		<td><a href="">Logoff</a></td>
+    		<td><a href="../../logoff.do">Logoff</a></td>
     	</tr>
     </table>
     

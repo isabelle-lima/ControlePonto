@@ -43,6 +43,7 @@
             </div>
             <div class="form-group">
             	<input class="btn btn-primary btn-block" type="submit" value="Login">
+            	<a href="views/CadastroUsuario/cadUser.jsp">Ainda não é cadastrado? Cadastre-se agora.</a>
             </div>
            </form>
         </div>

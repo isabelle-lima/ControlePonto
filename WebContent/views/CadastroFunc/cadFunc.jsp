@@ -16,6 +16,12 @@
     <meta name="author" content="">
 
     <title>Cadastro de Funcionário | Controle Ponto</title>
+    
+	<%
+     if (session.getAttribute("login") == null){
+       response.sendRedirect("../../login.jsp");
+     }
+ 	%>
 
 	<link rel="icon" href="../Imagens/icon-clock-2.png">
     <!-- Bootstrap core CSS-->
